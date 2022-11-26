@@ -10,7 +10,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 
 public class SegundaActividad extends AppCompatActivity {
-    //referencias
     private Button btnFiltrar;
     private ListView ltvTareas;
     private TextInputLayout tilBuscar;
