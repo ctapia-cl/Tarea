@@ -1,4 +1,4 @@
-package cl.seccion121.proyectospinner;
+package com.example.tarea;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -67,5 +67,4 @@ public class MainActivity extends AppCompatActivity {
         btnAceptar = findViewById(R.id.btnAceptar);
         btnCancelar = findViewById(R.id.btnCancelar);
     }
-    //endregion
-}
+//endregion
