@@ -23,19 +23,21 @@ public class MainActivity extends AppCompatActivity {
         referencias();
         eventos();
     }
+
     private void mostrarNombreEnOtraActividad(){
         Tareas tareaUno = new Tareas();
 
-        tareaUno.setTitulo("Ingrese el Título de la Tarea");
-        tareaUno.setDescripcion("Ingrese una Descripción");
+        tareaUno.setTitulo("Título de la Tarea");
+        tareaUno.setDescripcion("una Descripción");
 
 
 
         String titulo = tilTitulo.getEditText().getText().toString();
+        String descripcion = tilDescripcion.getEditText().getText().toString();
 
         Intent segundaPantalla = new Intent(this,SegundaActividad.class);
         segundaPantalla.putExtra("Titulo Tarea", titulo);
-        segundaPantalla.putExtra("Descripción", tareaUno);
+        segundaPantalla.putExtra("Descripción", descripcion);
 
         startActivity(segundaPantalla);
     }
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void referencias(){
         tilTitulo = findViewById(R.id.tilTitulo);
-        tilDescripcion = findViewById(R.id.tilTitulo);
+        tilDescripcion = findViewById(R.id.tilDescripcion);
         btnIngresar = findViewById(R.id.btnIngresar);
         btnModificar = findViewById(R.id.btnModificar);
         btnBuscar = findViewById(R.id.btnBuscar);
