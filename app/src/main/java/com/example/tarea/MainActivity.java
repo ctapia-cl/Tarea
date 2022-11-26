@@ -2,7 +2,9 @@ package com.example.tarea;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -21,12 +23,35 @@ public class MainActivity extends AppCompatActivity {
         referencias();
         eventos();
     }
+    private void mostrarNombreEnOtraActividad(){
+        Tareas tareaUno = new Tareas();
 
+        tareaUno.setTitulo("Ingrese el Título de la Tarea");
+        tareaUno.setDescripcion("Ingrese una Descripción");
+
+
+
+        String titulo = tilTitulo.getEditText().getText().toString();
+
+        Intent segundaPantalla = new Intent(this,SegundaActividad.class);
+        segundaPantalla.putExtra("Titulo Tarea", titulo);
+        segundaPantalla.putExtra("Descripción", tareaUno);
+
+        startActivity(segundaPantalla);
+    }
 
 
 
     //region Eventos y referencias
     private void eventos(){
+        btnIngresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarNombreEnOtraActividad();
+            }
+        });
+
+
 
     }
 
