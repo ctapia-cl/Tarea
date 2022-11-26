@@ -12,8 +12,8 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
-    private TextInputLayout tilNombre;
-    private Button btnAceptar, btnCancelar;
+    private TextInputLayout tilTitulo, tilDescripcion;
+    private Button btnIngresar, btnModificar, btnBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         comunaUno.setDireccionMunicipalidad("Los pinos oriente 1234");
 
 
-        String nombre = tilNombre.getEditText().getText().toString();
+        String nombre = tilTitulo.getEditText().getText().toString();
 
         Intent segundaPantalla = new Intent(this,SegundaActividad.class);
         segundaPantalla.putExtra("datoNombre", nombre);
@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
     //region Eventos y referencias
     private void eventos(){
-        btnAceptar.setOnClickListener(new View.OnClickListener() {
+        btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mostrarNombreEnOtraActividad();
             }
         });
-        btnCancelar.setOnClickListener(new View.OnClickListener() {
+        btnModificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -63,8 +63,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void referencias(){
-        tilNombre = findViewById(R.id.tilNombre);
-        btnAceptar = findViewById(R.id.btnAceptar);
-        btnCancelar = findViewById(R.id.btnCancelar);
+        tilTitulo = findViewById(R.id.tilTitulo);
+        tilDescripcion = findViewById(R.id.tilDescripcion);
+        btnIngresar = findViewById(R.id.btnIngresar);
+        btnModificar = findViewById(R.id.btnModificar);
+        btnBuscar = findViewById(R.id.btnBuscar);
     }
 //endregion
